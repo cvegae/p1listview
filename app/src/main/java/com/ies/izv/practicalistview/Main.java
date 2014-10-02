@@ -15,10 +15,8 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.RadioGroup;
 import android.widget.Toast;
-
 import java.util.ArrayList;
 import java.util.Collections;
-
 
 public class Main extends Activity {
 
@@ -133,36 +131,19 @@ public class Main extends Activity {
     }
 
     private void iniciar(){
-        lv = (ListView) findViewById(R.id.lvLista);
         iniciarAlumnos();
-        ad = new Adaptador(this,R.layout.listview_item,listaAlumnos);
-        lv.setAdapter(ad);
-        registerForContextMenu(lv);
         asignarOperaciones();
+        lv = (ListView) findViewById(R.id.lvLista);
+        registerForContextMenu(lv);
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                final Alumno alumno = (Alumno)lv.getItemAtPosition(i);
+                final Alumno alumno = (Alumno) lv.getItemAtPosition(i);
                 mostrarDialogo(alumno, R.string.dialogo_titulo_edit, opEdit);
             }
         });
-    }
-
-    private void iniciarAlumnos(){
-        Alumno a;
-        a = new Alumno("maría","2 dam", true);
-        listaAlumnos.add(a);
-        a = new Alumno("juana","2 dam", true);
-        listaAlumnos.add(a);
-        a = new Alumno("pepe","2 dam", false);
-        listaAlumnos.add(a);
-        a = new Alumno("luisa","2 daw", true);
-        listaAlumnos.add(a);
-        a = new Alumno("paco","2 daw", false);
-        listaAlumnos.add(a);
-        a = new Alumno("juan","2 daw", false);
-        listaAlumnos.add(a);
-        Collections.sort(listaAlumnos);
+        ad = new Adaptador(this,R.layout.listview_item,listaAlumnos);
+        lv.setAdapter(ad);
     }
 
     private void mostrarControles(View vista, Alumno alumno){
@@ -212,5 +193,24 @@ public class Main extends Activity {
 
     static interface OperacionDialogo{
         public void operacion(View v, Alumno a);
+    }
+
+    /**********************************************************************************************/
+
+    private void iniciarAlumnos(){
+        Alumno a;
+        a = new Alumno("lópez, maría","2 dam", true);
+        listaAlumnos.add(a);
+        a = new Alumno("pérez, juana","2 dam", true);
+        listaAlumnos.add(a);
+        a = new Alumno("gómez, pepe","2 dam", false);
+        listaAlumnos.add(a);
+        a = new Alumno("gámez, luisa","2 daw", true);
+        listaAlumnos.add(a);
+        a = new Alumno("gonzález, paco","2 daw", false);
+        listaAlumnos.add(a);
+        a = new Alumno("jiménez, juan","2 daw", false);
+        listaAlumnos.add(a);
+        Collections.sort(listaAlumnos);
     }
 }

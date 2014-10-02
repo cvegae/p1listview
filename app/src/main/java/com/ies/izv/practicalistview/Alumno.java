@@ -1,6 +1,8 @@
 package com.ies.izv.practicalistview;
 
 import java.io.Serializable;
+import java.text.Collator;
+import java.util.Locale;
 
 public class Alumno implements Comparable<Alumno>, Serializable{
 
@@ -77,9 +79,12 @@ public class Alumno implements Comparable<Alumno>, Serializable{
 
     @Override
     public int compareTo(Alumno alumno) {
-        int ct1 = this.grupo.compareTo(alumno.grupo);
+        Collator coll = Collator.getInstance(Locale.getDefault());
+        int ct1 = coll.compare(this.grupo, alumno.grupo);
+        //int ct1 = this.grupo.compareTo(alumno.grupo);
         if(ct1==0){
-            ct1 = this.nombre.compareTo(alumno.nombre);
+            //ct1 = this.nombre.compareTo(alumno.nombre);
+            ct1 = coll.compare(this.nombre, alumno.nombre);
         }
         return ct1;
     }
