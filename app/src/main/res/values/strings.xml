@@ -1,9 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="action_settings">Settings</string>
+    <string name="action_add">Añadir</string>
     <string name="app_name">Practica ListView</string>
+    <string name="dialogo_titulo_add">Alta</string>
+    <string name="dialogo_titulo_edit">Editar</string>
+    <string name="dialogo_boton_aceptar">Aceptar</string>
+    <string name="dialogo_boton_cancelar">Cancelar</string>
+    <string name="menu_cancelar">cancelar</string>
+    <string name="menu_delete">borrar</string>
+    <string name="menu_edit">Editar</string>
+    <string name="texto_femenino">Femenino</string>
     <string name="texto_grupo">Grupo</string>
+    <string name="texto_masculino">Masculino</string>
     <string name="texto_nombre">Nombre</string>
     <string name="texto_sexo">Sexo</string>
 
